@@ -1,0 +1,39 @@
+#home .nav-tabs {
+  display: flex;
+  justify-content: center;
+  background-color: $primary-light;
+  border: none;
+}
+#home .nav-tabs .nav-item {
+  border-radius: 0 !important;
+  border: none;
+  color: white !important;
+  padding: 0.6vw 1.5vw;
+  font-size: 1vw;
+  cursor: pointer;
+  transition: 0.2s;
+}
+#home .nav-tabs .nav-item:hover {
+  background-color: $accent;
+  transform: none;
+  text-decoration: none;
+}
+#home .nav-tabs .nav-item.active {
+  background-color: $accent;
+}
+
+// 1024px
+@media (max-width: 1024px) {
+  #home .nav-tabs .nav-item {
+    font-size: 16px;
+    padding: 8px 25px;
+  }
+}
+
+// 576px
+@media (max-width: 576px) {
+  #app #home {
+    height: auto;
+    min-height: 100vh;
+  }
+}

@@ -1,0 +1,488 @@
+#chat {
+  @extend %background-gradient;
+  align-items: center;
+  justify-content: center;
+}
+#chat .card {
+  @extend %card-shadow;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  border: none;
+  width: 60vw;
+  height: 70vh;
+  background: none;
+}
+
+// Main screen header
+#chat #main-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: $primary-light;
+  position: relative;
+}
+#chat #main-screen .header {
+  border-bottom: 0.2vw solid $primary-dark;
+  padding: 1.8vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.2vw;
+}
+#chat #main-screen .header .username {
+  color: white;
+  text-decoration: none;
+}
+
+#chat #main-screen .contact-photo {
+  position: relative;
+  margin-right: 0.9vw;
+}
+#chat #main-screen .contact-photo .image {
+  display: block;
+  width: 2.4vw;
+  height: 2.4vw;
+  border-radius: 50%;
+}
+#chat #main-screen .contact-photo .status {
+  width: 0.72vw;
+  height: 0.72vw;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+}
+#chat #main-screen .contact-photo .status.online {
+  background-color: #38c172;
+}
+#chat #main-screen .contact-photo .status.offline {
+  background-color: #e3342f;
+}
+
+// Main screen contacts
+#chat #main-screen #contacts-container {
+  flex: 1;
+  overflow: hidden;
+  color: white;
+}
+#chat #main-screen #contacts-list {
+  max-height: 100%;
+  overflow: auto;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+#chat #main-screen .contact {
+  border-bottom: 0.2vw solid $primary-dark;
+  display: flex;
+  padding: 1.8vw 0.9vw;
+  cursor: pointer;
+  transition: 0.2s;
+  position: relative;
+}
+#chat #main-screen .contact.selected {
+  background-color: $accent;
+}
+#chat #main-screen .contact .contact-photo .status {
+  bottom: 0.2vw;
+  right: 0.2vw;
+}
+#chat #main-screen .contact .middle {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 0.84vw;
+}
+#chat #main-screen .contact .username {
+  font-weight: bold;
+  font-size: 1vw;
+}
+#chat #main-screen .contact .message {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+#chat #main-screen .contact .right {
+  position: absolute;
+  top: 0.42vw;
+  right: 1.2vw;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 0.66vw;
+}
+#chat #main-screen .contact .right .unread {
+  flex-basis: 20%;
+  text-align: right;
+  background-color: #38c172;
+  font-size: 0.72vw;
+  padding: 0.3vw;
+  margin-top: 0.5vw;
+}
+#chat #main-screen .contact .right .seen {
+  font-size: 0.8vw;
+  margin-top: 0.2vw;
+}
+#chat #main-screen .contact .right .seen .icon:nth-child(2) {
+  margin-left: -0.6vw;
+}
+
+// Second screen
+#chat #second-screen {
+  flex: 2;
+  border-left: 0.2vw solid $primary-dark;
+}
+#chat #second-screen .header {
+  min-height: 4.2vw;
+  font-size: 1vw;
+  color: white;
+  background-color: $primary-light;
+  border-bottom: 0.2vw solid $primary-dark;
+  font-weight: bold;
+  padding: 0 1.2vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#chat #second-screen .header .back {
+  font-size: 1.31vw;
+  cursor: pointer;
+}
+#chat #second-screen .header .right {
+  display: flex;
+  align-items: center;
+}
+#chat #second-screen .header .right .image {
+  display: block;
+  width: 1.5vw;
+  height: 1.5vw;
+  margin-right: 1vw;
+  border-radius: 50%;
+}
+#chat #second-screen .header .right .username {
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+
+// Conversation
+#chat #second-screen #conversation {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  padding-bottom: 3vw;
+}
+#chat #second-screen ul {
+  border-bottom: 0.2vw solid #080325;
+  background-color: #201B3A;
+  flex: 1;
+  overflow: auto;
+  list-style-type: none;
+  padding: 0 0.6vw;
+  margin: 0;
+  position: relative;
+}
+#chat #second-screen button#load-more-btn {
+  font-size: 0.8vw;
+  position: absolute;
+  top: -0.2vw;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: block;
+  z-index: 100;
+}
+#chat #second-screen .message {
+  margin: 0.6vw 0;
+  display: flex;
+}
+#chat #second-screen .message .text {
+  max-width: 50%;
+  text-align: left;
+  display: inline-block;
+  padding: 0.6vw;
+  padding-right: 2.4vw;
+  position: relative;
+  border-radius: 0.25vw;
+  cursor: default;
+}
+#chat #second-screen .message.received {
+  justify-content: flex-start;
+}
+#chat #second-screen .message.received .text {
+  background-color: #080325;
+}
+#chat #second-screen .message.sent {
+  justify-content: flex-end;
+}
+#chat #second-screen .message.sent .text {
+  background-color: #D92B4C;
+  color: white;
+}
+#chat #second-screen .message .status {
+  font-size: 0.66vw;
+  position: absolute;
+  bottom: 0.3vw;
+  right: 0.3vw;
+}
+#conversation .message .status .seen .icon:nth-child(2) {
+  margin-left: -0.5vw;
+}
+#chat #second-screen .typing {
+  position: absolute;
+  width: 5vw;
+  text-align: center;
+  bottom: 4.2vw;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  font-size: 0.85vw;
+  background-color: #080325;
+  color: white;
+  z-index: 4;
+  display: none;
+  border-radius: 0.25vw;
+}
+#chat #second-screen .message-composer {
+  height: 3vw;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0.6vw;
+  padding-right: 1vw;
+  background-color: white;
+  display: flex;
+  background-color: $primary-dark;
+}
+#chat #second-screen .message-composer input {
+  overflow-y: hidden;
+  overflow-x: auto;
+  background-color: #201B3A;
+  color: white;
+  flex: 1;
+  width: 100%;
+  max-height: 100%;
+  resize: none;
+  border: none;
+  font-size: 1.2vw;
+  padding: 0;
+}
+#chat #second-screen .message-composer input:focus {
+  box-shadow: none;
+}
+#chat #second-screen .message-composer .icon {
+  font-size: 1.8vw;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-right: 0.6vw;
+}
+
+// Welcome
+#chat #second-screen #welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary-light;
+  min-height: 100%;
+  text-align: center;
+}
+#chat #second-screen #welcome .icon {
+  display: block;
+  font-size: 4vw;
+  margin-bottom: 1.5vw;
+}
+#chat #second-screen #welcome p {
+  width: 70%;
+  margin: 0 auto;
+}
+
+// 1024px
+@media screen and (max-width: 1024px) {
+  #chat .card {
+    width: 85%;
+  }
+
+  #chat #main-screen .header {
+    padding: 20px;
+    font-size: 16px;
+    border-width: 2px;
+  }
+  #chat #main-screen .contact-photo {
+    margin-right: 10px;
+  }
+  #chat #main-screen .contact-photo .image {
+    width: 30px;
+    height: 30px;
+  }
+  #chat #main-screen .contact-photo .status {
+    width: 11px;
+    height: 11px;
+  }
+
+  #chat #main-screen .contact {
+    border-width: 2px;
+    padding: 20px 10px;
+  }
+  #chat #main-screen .contact .contact-photo .status {
+    bottom: 3px;
+    right: 3px;
+  }
+  #chat #main-screen .contact .middle {
+    font-size: 11px;
+  }
+  #chat #main-screen .contact .username {
+    font-size: 12px;
+  }
+  #chat #main-screen .contact .right {
+    top: 7px;
+    right: 15px;
+    font-size: 9px;
+  }
+  #chat #main-screen .contact .right .unread {
+    font-size: 10px;
+    padding: 4px;
+    margin-top: 6px;
+  }
+  #chat #main-screen .contact .right .seen {
+    font-size: 11px;
+    margin-top: 3px;
+  }
+  #chat #main-screen .contact .right .seen .icon:nth-child(2) {
+    margin-left: -8px;
+  }
+
+  #chat #second-screen #conversation {
+    padding-bottom: 35px;
+  }
+  #chat #second-screen .header {
+    height: 45px;
+    padding: 20px;
+  }
+  #chat #second-screen .header .back {
+    font-size: 20px;
+  }
+  #chat #second-screen .header .right .image {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  #chat #second-screen .header .right .username {
+    font-size: 11px;
+  }
+  #chat #second-screen ul {
+    border-width: 2px;
+    padding: 0 6px;
+  }
+  #chat #second-screen button#load-more-btn {
+    font-size: 12px;
+    top: -2px;
+  }
+  #chat #second-screen .message {
+    margin: 4px 0;
+  }
+  #chat #second-screen .message .text {
+    padding: 5px;
+    padding-right: 25px;
+    border-radius: 3px;
+    font-size: 12px;
+  }
+  #chat #second-screen .message .status {
+    font-size: 8px;
+    bottom: 5px;
+    right: 5px;
+  }
+  #chat #second-screen .message .status .seen .icon:nth-child(2) {
+    margin-left: -6px;
+  }
+  #chat #second-screen .typing {
+    width: 70px;
+    bottom: 50px;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+  #chat #second-screen .message-composer {
+    height: 35px;
+    padding: 7px;
+    padding-right: 10px;
+  }
+  #chat #second-screen .message-composer input {
+    font-size: 16px;
+  }
+  #chat #second-screen .message-composer .icon {
+    font-size: 22px;
+    margin-right: 5px;
+  }
+
+  #chat #second-screen #welcome .icon {
+    font-size: 60px;
+    margin-bottom: 15px;
+  }
+}
+
+// 768px
+@media screen and (max-width: 768px) {
+  #chat .card {
+    width: 100%;
+    height: 100%;
+  }
+
+  #chat #second-screen {
+    flex: 1.5;
+  }
+}
+
+// 576px
+@media screen and (max-width: 576px) {
+
+  #chat #main-screen {
+    position: static;
+  }
+
+  #chat #main-screen .contact-photo .image {
+    width: 40px;
+    height: 40px;
+  }
+  #chat #main-screen .contact .contact-photo .status {
+    width: 11px;
+    height: 11px;
+    bottom: 0px;
+    right: 0px;
+  }
+
+  #chat #second-screen {
+    border-left: none !important;
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100vh;
+    z-index: 50;
+  }
+  #chat #second-screen ul {
+    padding-bottom: 70px;
+  }
+  #chat #second-screen button#load-more-btn {
+    padding: 5px 15px;
+  }
+  #chat #second-screen .typing {
+    bottom: 150px;
+  }
+  #chat #second-screen .message-composer {
+    left: -150%;
+    position: fixed;
+    bottom: 35px;
+  }
+
+
+}

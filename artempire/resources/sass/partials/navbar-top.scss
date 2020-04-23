@@ -1,0 +1,165 @@
+#navbar-top {
+  width: 100%;
+  height: 6.5vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 25vw;
+  background-color: $primary-light;
+  z-index: 10;
+}
+
+// Links (general)
+#navbar-top .links {
+  display: flex;
+}
+#navbar-top .links a {
+  padding: 0 0.6vw;
+  transition: 0.2s;
+  color: white !important;
+  font-size: 1vw;
+}
+#navbar-top .links a:hover {
+  color: $accent !important;
+  text-decoration: none;
+  font-weight: bold;
+}
+#navbar-top .links a.active,
+#navbar-top .links a.router-link-active {
+  color: $accent !important;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+// All dropdowns in navbar
+#navbar-top .dropdown .dropdown-menu {
+  top: 100% !important;
+  left: -50% !important;
+  transform: none !important;
+}
+
+// Links (icons or main links)
+#navbar-top .links.icons a {
+  padding: 0 1vw;
+  font-size: 1.2vw;
+}
+#navbar-top .links.icons .dropdown-toggle::after {
+  color: white;
+}
+#navbar-top .links.icons .dropdown-menu {
+  padding: 0;
+  background-color: $primary-light;
+  margin: 0;
+}
+#navbar-top .links.icons .dropdown-menu a {
+  font-size: 0.9vw;
+  padding-top: 0.2vw;
+  padding-bottom: 0.2vw;
+}
+#navbar-top .links.icons .dropdown-menu a .icon {
+  margin-right: 0.5vw;
+}
+
+// Mobile dropdown (in px)
+#navbar-top .dropdown.mobile {
+  display: none;
+}
+#navbar-top .dropdown.mobile #menu-icon {
+  font-size: 25px;
+  color: white;
+}
+#navbar-top .dropdown.mobile .dropdown-menu {
+  padding: 0.5vw 0;
+  background-color: $primary-light;
+  margin: 0;
+}
+#navbar-top .dropdown.mobile .dropdown-menu a {
+  font-size: 14px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: white;
+}
+#navbar-top .dropdown.mobile .dropdown-menu a.active {
+  background: none;
+  color: $accent;
+  font-weight: bold;
+}
+#navbar-top .dropdown.mobile .dropdown-menu a .icon {
+  margin-right: 8px;
+}
+
+// Logo
+#navbar-top .logo {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.5vw;
+  color: white;
+  text-decoration: none;
+}
+#navbar-top .logo .empire {
+  font-family: 'Permanent Marker', cursive;
+  color: $accent;
+  margin-left: 5px;
+}
+
+// 1024px
+@media screen and (max-width: 1024px) {
+  #navbar-top {
+    padding: 0px 100px;
+  }
+
+  #navbar-top .links a {
+    font-size: 14px;
+  }
+
+  #navbar-top .links.icons a {
+    padding: 0 12px;
+    font-size: 16px;
+  }
+  #navbar-top .links.icons .dropdown-menu a {
+    font-size: 14px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+  #navbar-top .links.icons .dropdown-menu a .icon {
+    margin-right: 6px;
+  }
+
+  #navbar-top .logo {
+    font-size: 22px;
+  }
+}
+
+// 768px
+@media screen and (max-width: 768px) {
+  #navbar-top {
+    padding: 0px 30px;
+  }
+
+  #navbar-top .dropdown .dropdown-menu {
+    left: -100% !important;
+  }
+
+  #navbar-top .links.icons .dropdown-menu {
+    min-width: auto;
+    width: 140px;
+  }
+}
+
+// 576px
+@media screen and (max-width: 576px) {
+  #navbar-top .links {
+    display: none;
+  }
+
+  #navbar-top .dropdown.mobile {
+    display: block;
+  }
+
+  #navbar-top .dropdown .dropdown-menu {
+    top: 85% !important;
+    background-color: $primary-dark !important;
+  }
+}

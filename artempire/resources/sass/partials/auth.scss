@@ -1,0 +1,166 @@
+// Containers
+#auth-page {
+  @extend %background-gradient;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#auth-page .card {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  display: flex;
+  flex-direction: row;
+  border: none;
+  width: 60vw;
+}
+
+// Right
+#auth-page .card .right {
+  flex: 1;
+  background-color: #201B3A;
+  padding: 3.571vw;
+  color: white;
+}
+
+// Left
+#auth-page .card .left {
+  background-image: url('https://cdnb.artstation.com/p/assets/images/images/015/748/333/large/patryk-olkiewicz-final.jpg?1549482786');
+  background-size: cover;
+  background-position: center;
+  flex: 1;
+}
+#auth-page .card .header {
+  margin-bottom: 2.381vw;
+  text-align: center;
+}
+#auth-page .card .header h1 {
+  margin-bottom: 1.786vw;
+}
+#auth-page .card form {
+  font-size: 0.952vw;
+  text-align: center;
+}
+#auth-page .card .form-group {
+  margin-bottom: 0.893vw;
+}
+#auth-page .card label {
+  font-size: 0.9vw;
+}
+#auth-page .card input {
+  width: 60%;
+  margin: 0 auto;
+}
+#auth-page .card .hint {
+  font-size: 0.655vw;
+}
+#auth-page .card .form-check {
+  width: 8vw;
+  margin: 0 auto;
+  padding-left: 1.190vw;
+}
+#auth-page .card .form-check input {
+  width: 1.1vw;
+  height: 0.7vw;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  padding: 0;
+}
+#auth-page .card .form-check  * {
+  cursor: pointer;
+}
+#auth-page .card .auth-links {
+  margin-top: 1.786vw;
+}
+#auth-page .card .auth-links a {
+  color: white !important;
+}
+
+#auth-page #register-card .row:nth-child(3) .form-group {
+  margin-bottom: 0;
+}
+#auth-page #register-card .row:nth-child(4) {
+  justify-content: flex-end;
+}
+#auth-page #register-card .btn {
+  margin-top: 2vw;
+}
+
+// 1024px
+@media screen and (max-width: 1024px) {
+  #auth-page .card {
+    width: 80%;
+  }
+
+  #auth-page .card .right {
+    padding: 50px;
+  }
+  #auth-page .card .header {
+    margin-bottom: 30px;
+  }
+  #auth-page .card .hint {
+    font-size: 10px;
+  }
+  #auth-page .card label {
+    font-size: 13px;
+  }
+  #auth-page .card input {
+    width: 100%;
+  }
+  #auth-page .card .form-group {
+    margin-top: 20px;
+  }
+  #auth-page .card .form-check {
+    width: 120px;
+  }
+  #auth-page .card .form-check input {
+    width: 10px;
+    height: 10px;
+  }
+  #auth-page .card .auth-links {
+    margin-top: 20px;
+  }
+  #auth-page .card .auth-links a {
+    font-size: 12px;
+  }
+
+  #auth-page #register-card .btn {
+    margin-top: 2vw;
+  }
+}
+
+// 768px
+@media screen and (max-width: 768px) {
+  #auth-page .card .left {
+    display: none;
+  }
+}
+
+// 576px
+@media screen and (max-width: 576px) {
+  #auth-page .card {
+    width: 100%;
+    height: 100%;
+  }
+  #auth-page .card .header {
+    margin-bottom: 0;
+  }
+  #auth-page .card .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #auth-page #register-card {
+    height: auto;
+    padding-top: 110px;
+  }
+  #auth-page #register-card .btn {
+    margin-top: 30px;
+  }
+
+
+}

@@ -1,0 +1,220 @@
+#profile {
+  overflow-x: hidden !important;
+}
+
+// Profile top
+#profile .top {
+  background-attachment: fixed;
+}
+#profile .top .filter {
+  min-height: 50vh;
+  position: relative;
+  background: rgb(255,255,255); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(8,3,37,1) 96%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(8,3,37,1) 96%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(8,3,37,1) 96%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#080325',GradientType=0 ); /* IE6-9 */
+}
+
+#profile .top form {
+  position: absolute;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  cursor: pointer;
+  font-size: 0.8vw;
+  padding: 0.25vw 0.9vw;
+}
+#profile .top form input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+#profile .info {
+  padding-top: 1vw;
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+  margin-left: 10%;
+}
+#profile .info > * {
+  margin: 0.2vw 0;
+}
+#profile .info .image {
+  height: 7.15vw;
+  width: 7.15vw;
+  border-radius: 50%;
+  margin-bottom: 1vw;
+}
+#profile .info .username {
+  font-size: 1.8vw;
+  font-weight: bold;
+}
+#profile .info .fullname {
+  font-size: 1.2vw;
+}
+#profile .info .location .icon {
+  margin-right: 0.6vw;
+}
+#profile .info .description {
+  max-width: 23.8vw;
+}
+#profile .info .website {
+  font-size: 1vw;
+  margin-bottom: 0;
+}
+#profile .info .social {
+  display: flex;
+  margin-top: 0;
+}
+#profile .info .social a {
+  display: block;
+  padding: 0 0.5vw;
+  font-size: 1vw;
+  color: white;
+  transition: 0.2s;
+}
+#profile .info .social a:hover {
+  color: $accent;
+}
+#profile .info .buttons {
+  margin-bottom: 0;
+  margin-top: 1vw;
+}
+#profile .info .buttons button.clicked {
+  padding: 0.4vw 2.5vw !important;
+}
+#profile .info .buttons button:nth-child(1) {
+  padding: 0.49vw 2.5vw;
+  margin-right: 0.4vw;
+}
+#profile .info .buttons button:nth-child(2) {
+  margin-left: 0.4vw;
+}
+#profile .info .buttons .icon {
+  margin-left: 0.4vw;
+}
+
+#profile .nav-tabs {
+  background-color: $primary-dark;
+  display: flex;
+  justify-content: center;
+  border: none;
+  margin-top: -0.01vw;
+  margin-bottom: 1vw;
+}
+#profile .nav-tabs .nav-item {
+  padding: 0.6vw 1.2vw;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 1vw;
+}
+#profile .nav-tabs .nav-item:hover {
+  color: $accent;
+  font-weight: bold;
+  border: none !important;
+  outline: none !important;
+}
+#profile .nav-tabs .nav-item:not( :hover ) {
+  border: none !important;
+  outline: none !important;
+}
+#profile .nav-tabs .nav-item.active {
+  color: $accent !important;
+  transform: scale(1.1);
+  font-weight: bold;
+  background-color: inherit !important;
+  border: none;
+}
+#profile .nav-tabs .nav-item strong {
+  padding-right: 0 !important;
+  margin-left: 0.5vw;
+}
+#profile .hint {
+  text-align: center;
+  margin-top: 1.8vw;
+}
+
+// 1024px
+@media screen and (max-width: 1024px) {
+
+  #profile .top .filter {
+    min-height: 55vh;
+  }
+  #profile .top form {
+    font-size: 12px;
+  }
+
+  #profile .info  {
+    padding-top: 20px;
+  }
+  #profile .info .image {
+    width: 80px !important;
+    height: 80px !important;
+    margin-bottom: 15px;
+  }
+  #profile .info h3.username {
+    font-size: 25px !important;
+    font-weight: bold;
+  }
+  #profile .info .fullname {
+    font-size: 16px;
+  }
+  #profile .info .description {
+    max-width: 300px;
+  }
+  #profile .info .website {
+    font-size: 14px;
+  }
+  #profile .info .social a {
+    padding: 0 6px;
+    font-size: 12px;
+  }
+  #profile .info .buttons {
+    width: 450px;
+  }
+  #profile .info .buttons button.clicked {
+    padding: 5px 45px !important;
+  }
+  #profile .info .buttons button:nth-child(1) {
+    padding: 6px 45px;
+    margin-right: 5px;
+  }
+  #profile .info .buttons button:nth-child(2) {
+    margin-left: 5px;
+  }
+
+  #profile .nav-tabs {
+    margin-top: -1px;
+    margin-bottom: 15px;
+  }
+  #profile .nav-tabs .nav-item {
+    padding: 5px 15px;
+    font-size: 14px;
+  }
+  #profile .nav-tabs .nav-item strong {
+    margin-left: 5px;
+  }
+  #profile .hint {
+    margin-top: 25px;
+  }
+
+}
+
+// 768px
+@media screen and (max-width: 768px) {
+}
+
+// Smartphones
+@media screen and (max-width: 425px) {
+  .artworks {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .users {
+    width: 95%;
+  }
+}

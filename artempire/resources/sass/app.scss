@@ -1,0 +1,26 @@
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Permanent+Marker');
+
+// Global
+@import 'partials/global';
+
+// Bottom and top navbars
+@import 'partials/navbar-top';
+@import 'partials/navbar-bottom';
+
+// Pages
+@import 'partials/welcome';
+@import 'partials/home';
+@import 'partials/auth';
+@import 'partials/profile';
+@import 'partials/account';
+@import 'partials/chat';
+@import 'partials/upload';
+@import 'partials/search';
+@import 'partials/artwork';

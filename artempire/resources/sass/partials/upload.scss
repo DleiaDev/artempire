@@ -1,0 +1,234 @@
+// Containers
+#upload {
+  @extend %background-gradient;
+  align-items: center;
+  justify-content: center;
+}
+#upload .card {
+  @extend %card-shadow;
+  border: none;
+  width: 60vw;
+  height: 70vh;
+  margin: 0 auto;
+  flex-direction: column;
+  background-color: $primary-light;
+}
+#upload .card > div {
+  flex: 1;
+}
+
+// Navigation
+#upload nav {
+  display: flex;
+  height: 12%;
+  border-bottom: 0.2vw solid $primary-dark;
+}
+#upload nav .step {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+#upload nav .step:nth-child(1),
+#upload nav .step:nth-child(2) {
+  border-right: 0.2vw solid $primary-dark;
+}
+#upload nav .step.inactive {
+  opacity: 0.4;
+}
+#upload nav .icon {
+  font-size: 2vw;
+  margin-right: 1vw;
+}
+#upload nav .icon.check {
+  color: $green;
+}
+#upload nav h3 {
+  font-size: 1.3vw;
+  margin: 0;
+}
+#upload nav p {
+  margin: 0;
+  margin-top: -0.2vw;
+}
+
+// Step 1
+#upload #step1 #dropzone {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+#upload #step1 #dropzone .dz-icon .icon {
+  font-size: 4vw;
+  margin-bottom: 2vw;
+}
+#upload #step1 #dropzone .dz-message {
+  cursor: pointer;
+  font-size: 1.4vw;
+}
+#upload #step1 #dropzone .dz-preview {
+  display: none;
+}
+
+// Step 2
+#upload #step2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#upload #step2 form {
+  width: 50%;
+}
+#upload #step2 button {
+  margin-top: 2vw;
+}
+
+// Step3
+#upload #step3 {
+  display: flex;
+}
+#upload #step3 .flex {
+  display: flex;
+  width: 100%;
+}
+#upload #step3 .flex.flex-row {
+  flex-direction: row;
+}
+#upload #step3 .flex.flex-row .left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1vw;
+  border-right: 0.2vw solid $primary-dark;
+}
+#upload #step3 .flex.flex-row .left img {
+  max-width: 20vw;
+}
+#upload #step3 .flex.flex-row .right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#upload #step3 .flex.flex-row .right .top,
+#upload #step3 .flex.flex-row .right .bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1vw;
+  border-bottom: 0.2vw solid $primary-dark;
+  flex: 1;
+  text-align: center;
+}
+#upload #step3 .flex.flex-row .right .bottom {
+  border: none;
+  flex: 0;
+}
+#upload #step3 .flex.flex-column {
+  flex-direction: column;
+}
+#upload #step3 .flex.flex-column .top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1vw;
+  border-bottom: 0.2vw solid $primary-dark;
+}
+#upload #step3 .flex.flex-column .top img {
+  max-width: 25vw;
+}
+#upload #step3 .flex.flex-column .middle {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 0.2vw solid $primary-dark;
+  padding: 0 5vw;
+  text-align: center;
+}
+#upload #step3 .flex.flex-column .bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1vw;
+}
+
+// 1024px
+@media screen and (max-width: 1024px) {
+  #upload .card {
+    width: 90%;
+  }
+  #upload nav .icon {
+    font-size: 25px;
+  }
+
+  #upload #step1 #dropzone .dz-icon .icon {
+    font-size: 50px;
+  }
+  #upload #step1 #dropzone .dz-message {
+    font-size: 16px;
+  }
+}
+
+// 768px
+@media screen and (max-width: 768px) {
+  #upload .card {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+  }
+  #upload nav {
+    height: 10%;
+    border-top: 0.2vw solid $primary-dark;
+  }
+  #upload nav p {
+    font-size: 10px;
+  }
+  #upload nav h3 {
+    font-size: 10px;
+  }
+
+  #upload #step2 form {
+    width: 80%;
+  }
+
+  // Disable image previews
+  #upload #step3 .flex.flex-row .left,
+  #upload #step3 .flex.flex-column .top {
+    display: none;
+  }
+
+  #upload #step3 .flex.flex-row .right .bottom,
+  #upload #step3 .flex.flex-column .bottom {
+    padding: 30px;
+  }
+}
+
+// 576px
+@media screen and (max-width: 576px) {
+  #upload nav p {
+    display: none;
+  }
+  #upload nav h3 {
+    font-size: 22px;
+  }
+  #upload nav h3 span {
+    display: none;
+  }
+  #upload nav .icon {
+    display: none;
+  }
+
+  #upload #step1 #dropzone .dz-icon .icon {
+    margin-bottom: 20px;
+  }
+  #upload #step1 #dropzone .dz-message {
+    content: 'Click to upload your image.';
+  }
+}

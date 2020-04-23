@@ -1,0 +1,62 @@
+#welcome-page .content {
+  background-image: url('/img/showcase.jpg');
+  color: white;
+}
+#welcome-page .content .filter {
+  height: 100vh;
+  background-color: $welcome-filter;
+}
+#welcome-page .content .filter > div {
+  margin: 0 auto;
+  padding-top: 8vw;
+  text-align: center;
+}
+#welcome-page .content .buttons {
+  max-width: 20%;
+  margin: 0 auto;
+  display: flex;
+}
+#welcome-page .content .buttons .btn {
+  font-size: 1vw;
+  flex: 1;
+}
+#welcome-page .content .buttons .btn-primary {
+  margin-right: 0.6vw;
+}
+#welcome-page .content .buttons .btn-secondary {
+  margin-left: 0.6vw;
+  border: none !important;
+  background-color: white;
+  color: $primary-dark !important;
+  font-weight: bold;
+}
+#welcome-page .content .buttons .btn-secondary:hover {
+  color: white !important;
+  background-color: $primary-dark !important;
+}
+
+// 1024px
+@media screen and (max-width: 1024px) {
+  #welcome-page .content .filter > div {
+    padding-top: 13%;
+  }
+  #welcome-page .content .buttons {
+    max-width: 300px;
+  }
+  #welcome-page .content .buttons .btn {
+    font-size: 16px;
+  }
+  #welcome-page .content .buttons .btn-primary {
+    margin-right: 6px;
+  }
+  #welcome-page .content .buttons .btn-secondary {
+    margin-left: 6px;
+  }
+}
+
+// 576px
+@media screen and (max-width: 576px) {
+  #welcome-page .content .filter > div {
+    padding: 150px 30px 0 30px;
+  }
+}

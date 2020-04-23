@@ -1,0 +1,395 @@
+body {
+  padding: 0 !important;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9vw;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1vw;
+}
+h1 {
+  font-size: 2.15vw;
+}
+h3 {
+  font-size: 1.5vw;
+}
+h4 {
+  font-size: 1.3vw;
+}
+p {
+  margin-bottom: 0.952vw;
+}
+a {
+  text-decoration: none;
+}
+
+// Vue transition
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .15s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+// Tooltip
+.tooltip {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7vw;
+}
+.tooltip .tooltip-inner {
+  max-width: 20vw;
+  padding: 0.3vw 1vw;
+  border-radius: 0.2vw;
+}
+.tooltip .bs-tooltip-left .arrow {
+  width: 0.5vw;
+  height: 1vw;
+}
+
+// Toast and loading
+.swal-toast-container .swal2-toast {
+  padding: 0.4vw !important;
+}
+.swal-toast-container .swal2-title {
+  font-size: 1.1vw !important;
+}
+.swal-toast-container .swal2-icon {
+  font-size: 1vw;
+}
+.swal-loader-container {
+  background: rgba(255, 255, 255, 0.4) !important;
+}
+.swal-loader-container .swal2-modal {
+  width: 15vw !important;
+  background: none !important;
+}
+.swal-loader-container .swal2-loading button {
+  width: 8vw !important;
+  height: 8vw !important;
+  border-left-color: $accent !important;
+  border-right-color: $accent !important;
+  border-width: 0.7vw !important;
+  animation-duration: 0.8s !important;
+}
+
+// Buttons
+%button {
+  border: none !important;
+  outline: none !important;
+  background-color: $accent;
+  padding: 0.4vw 2.5vw;
+  font-size: 1vw;
+  color: white;
+  display: inline-block;
+  transform: skewX(-8deg);
+  border-radius: 0.3vw;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn.btn-primary {
+  @extend %button;
+}
+.btn.btn-primary:hover,
+.btn.btn-primary:focus,
+.btn.btn-primary:active {
+  background-color: white !important;
+  color: $accent !important;
+  text-decoration: none;
+  font-weight: bold;
+}
+.btn.btn-secondary {
+  @extend %button;
+  background-color: $transparent;
+  border: 0.09vw solid white !important;
+}
+.btn.btn-secondary:hover,
+.btn.btn-secondary:focus,
+.btn.btn-secondary:active {
+  background-color: white !important;
+  color: $primary-light !important;
+  text-decoration: none;
+  font-weight: bold;
+}
+.btn.clicked {
+  border: 0.070vw solid white !important;
+  background-color: white;
+  color: $accent !important;
+  font-weight: bold;
+}
+.btn.clicked:hover {
+  background-color: white !important;
+  color: $accent !important;
+}
+
+// Forms
+.form-group {
+  margin-bottom: 1vw
+}
+.form-control {
+  background-color: $primary-dark !important;
+  color: white !important;
+  border: 1px solid $primary-dark;
+  padding: 1vw;
+  font-size: 1vw;
+  border-radius: 0.4vw;
+}
+textarea.form-control {
+  padding: 0.5vw 1vw;
+  resize: none;
+}
+select.form-control {
+  padding: 0;
+  padding-left: 1vw;
+}
+input[type=file], input[type=file]::-webkit-file-upload-button {
+  cursor: pointer;
+}
+
+// Background
+.background {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+// Artworks
+.artworks {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.artworks .artwork {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.artworks .artwork .image {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transition: 0.2s;
+}
+.artworks .artwork:hover .image {
+  transform: scale(1.05);
+}
+
+// Users
+.users {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.users .user {
+  margin: 0.5vw;
+}
+.users .user {
+  width: 10vw;
+  height: 10vw;
+  display: block;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.5vw;
+  overflow: hidden;
+  cursor: pointer;
+}
+.users .user .image {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  transition: 0.2s;
+}
+.users .user:hover .image {
+  transform: scale(1.05);
+}
+.users .user .username {
+  flex: 1;
+  background-color: $primary-light;
+  text-align: center;
+  border-bottom-left-radius: 0.5vw;
+  border-bottom-right-radius: 0.5vw;
+}
+
+// Containers
+#app {
+  background-color: $primary-dark;
+}
+#app > div {
+  height: 100vh;
+  overflow: auto;
+  background-color: $primary-dark;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding-top: 6.5vh;
+}
+
+// Modals
+.modal-content {
+  background-color: $primary-light !important;
+  text-align: center !important;
+}
+.modal-header {
+  background-color: $primary-dark;
+  border-bottom: none;
+}
+.modal-body, .modal-footer {
+  background-color: $primary-light;
+  border-top: none;
+}
+.confirm-modal {
+  width: 250px;
+  padding: 10px;
+  padding-top: 20px;
+  font-weight: bold;
+  position: fixed;
+  top: -90px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+  background-color: $accent;
+  color: white;
+  z-index: 3;
+  button {
+    padding: 2px 12px;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  z-index: 1000;
+  width: 5px !important;
+}
+::-webkit-scrollbar-track {
+  background: #201B3A;
+}
+::-webkit-scrollbar-thumb {
+  background: #606D7C;
+}
+
+// 1024px
+@media (max-width: 1024px) {
+
+  body {
+    font-size: 14px;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 14px;
+  }
+  h1 {
+    font-size: 34px;
+  }
+  h3 {
+    font-size: 24px;
+  }
+  h4 {
+    font-size: 21px;
+  }
+  p {
+    margin-bottom: 16px;
+  }
+
+  // Tooltip
+  .tooltip {
+    font-size: 12px;
+  }
+  .tooltip .tooltip-inner {
+    max-width: 200px;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+  }
+  .tooltip .bs-tooltip-left .arrow {
+    width: 0.4rem;
+    height: 0.8rem;
+  }
+
+  .swal-toast-container .swal2-toast {
+    padding: 5px !important;
+  }
+  .swal-toast-container .swal2-title {
+    font-size: 11px !important;
+  }
+  .swal-toast-container .swal2-icon {
+    font-size: 11px;
+  }
+  .swal-loader-container .swal2-modal {
+    width: 300px !important;
+  }
+  .swal-loader-container .swal2-loading button {
+    width: 120px !important;
+    height: 120px !important;
+    border-width: 10px !important;
+  }
+
+  %button {
+    font-size: 16px;
+    padding: 5px 45px;
+    border-radius: 5px;
+  }
+  .btn.btn-secondary {
+    border: 1px solid white !important;
+  }
+  .btn.clicked {
+    border: 1px solid white !important;
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+  }
+  .form-control {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  textarea.form-control {
+    padding: 5px 10px;
+  }
+  select.form-control {
+    padding-left: 10px;
+  }
+
+  .artworks {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .users .user {
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+    margin: 7px;
+  }
+  .users .user .username {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+}
+
+// 768px
+@media (max-width: 768px) {
+  .artworks {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// 576px
+@media (max-width: 576px) {
+  #app > div {
+    padding-bottom: 40px;
+  }
+
+  %button {
+    font-size: 14px;
+    padding: 3px 20px;
+    border-radius: 4px;
+  }
+}
+
+// 425px
+@media (max-width: 425px) {
+  .artworks {
+    grid-template-columns: 1fr;
+  }
+}
